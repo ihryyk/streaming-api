@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: Streaming API
+
+  datasource:
+    url: jdbc:sqlserver://${POSTGRESQL_DB_HOST}:1433;databaseName=${POSTGRESQL_DB_NAME};encrypt=true;trustServerCertificate=true;
+    username: ${POSTGRESQL_USER}
+    password: ${POSTGRESQL_PASSWORD}
