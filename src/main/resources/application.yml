@@ -3,6 +3,15 @@ spring:
     name: Streaming API
 
   datasource:
-    url: jdbc:sqlserver://${POSTGRESQL_DB_HOST}:1433;databaseName=${POSTGRESQL_DB_NAME};encrypt=true;trustServerCertificate=true;
+    url: jdbc:postgresql://${POSTGRESQL_DB_HOST}:5432/${POSTGRESQL_DB_NAME}
     username: ${POSTGRESQL_USER}
     password: ${POSTGRESQL_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    database: postgresql
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
