@@ -25,6 +25,7 @@ class VideoServiceImpl implements VideoService {
         Video savedVideo = videoRepository.save(videoMapper.toVideo(upsertVideoRequest));
         log.info("Saved video:  title={}, id={}.", savedVideo.getTitle(), savedVideo.getId());
         log.info("Test git workflow-1");
+        log.info("Test git workflow-2");
         return videoMapper.tovideoModel(savedVideo);
     }
 
