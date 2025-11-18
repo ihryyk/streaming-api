@@ -5,8 +5,6 @@ import jakarta.transaction.Transactional;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
@@ -15,7 +13,6 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 class VideoServiceImpl implements VideoService {
 
-    private static final Logger log = LoggerFactory.getLogger(VideoServiceImpl.class);
     private final VideoRepository videoRepository;
     public final VideoMapper videoMapper;
 
@@ -24,8 +21,6 @@ class VideoServiceImpl implements VideoService {
         log.info("Saving video:  title={} ...", upsertVideoRequest.getTitle());
         Video savedVideo = videoRepository.save(videoMapper.toVideo(upsertVideoRequest));
         log.info("Saved video:  title={}, id={}.", savedVideo.getTitle(), savedVideo.getId());
-        log.info("Test git workflow-1");
-        log.info("Test git workflow-2");
         return videoMapper.tovideoModel(savedVideo);
     }
 
